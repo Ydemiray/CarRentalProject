@@ -39,7 +39,7 @@ namespace Business.Concrete
 
         public IDataResult<Brand> GetByid(int id)
         {
-            return new SuccessDataResult<Brand>(_brandDal.get(b => b.BrandId == id));
+            return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandId == id));
         }
 
         public IResult Update(Brand brand)
@@ -47,6 +47,7 @@ namespace Business.Concrete
 
             _brandDal.Update(brand);
             return new SuccessResult(Messages.CarUpdated);
+
         }
     }
 }
