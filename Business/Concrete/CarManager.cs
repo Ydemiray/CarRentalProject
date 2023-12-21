@@ -1,9 +1,14 @@
 ﻿using Business.Abstract;
 using Business.Constans;
+using Business.Validation.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingConcerns.Validation;
+using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -24,17 +29,13 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
-            if (car.CarName.Length<2)
-            {
-                return new ErrorResult(Messages.NotCarAdded);
-            }
-            else
-            {
-                _carDal.Add(car);
+            
+
+            _carDal.Add(car);
                 return new SuccessResult(Messages.CarAdded);
-            }
             
         }
 
@@ -51,6 +52,11 @@ namespace Business.Concrete
         public IDataResult<List<Car>> GetAll()
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Messages.CarsListed); 
+        }
+
+        public IDataResult<List<Car>> GetByBrand(int brandId)
+        {
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.BrandId == brandId));
         }
 
         public IDataResult<Car> GetById(int id)

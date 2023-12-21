@@ -18,4 +18,17 @@
     <ProjectReference Include="..\Entities\Entities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Uploads\Images\2020-renault-talisman-3.jpg" />
+    <None Include="wwwroot\Uploads\Images\3-26-56-renault-megane.png" />
+    <None Include="wwwroot\Uploads\Images\audiA3.png" />
+    <None Include="wwwroot\Uploads\Images\bmw-3-series-sedan-m-automobiles-gallery-impressions-m3-competition-02-mobile.jpg" />
+    <None Include="wwwroot\Uploads\Images\bmw-m5-cs-onepager-gallery-m5-core-03-wallpaper.jpg" />
+    <None Include="wwwroot\Uploads\Images\FiatEgea.png" />
+    <None Include="wwwroot\Uploads\Images\Linea.jpg" />
+    <None Include="wwwroot\Uploads\Images\passat.png" />
+    <None Include="wwwroot\Uploads\Images\polo.png" />
+    <None Include="wwwroot\Uploads\Images\renaultClio.png" />
+  </ItemGroup>
+
 </Project>

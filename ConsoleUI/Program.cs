@@ -30,7 +30,7 @@ namespace ConsoleUI
         private static void CarRental()
         {
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
-            rentalManager.Add(new Rental { CarId = 1, CustomerId = 2, Id = 1, RentDate = new DateTime(2023, 12, 14), ReturnDate = new DateTime(2023, 12, 17) });
+            rentalManager.Add(new Rental { CarId = 1, CustomerId = 2, RentalId = 1, RentDate = new DateTime(2023, 12, 14), ReturnDate = new DateTime(2023, 12, 17) });
 
             foreach (var rental in rentalManager.GetAll().Data)
             {
